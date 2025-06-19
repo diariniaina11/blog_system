@@ -19,10 +19,40 @@
         .login-container{
             background-color: rgb(187, 187, 113);
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            width: 57%;
+            height: 580px;
+            border-radius: 41px;
         }
-        
 
+        .left-side, .right-side{
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            width: 50%;
+            
+            justify-content: center;
+            align-items: center;
+        }
+
+        .left-side{
+            background-color: rgb(238, 59, 59);
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+
+        }
+        .right-side{
+            background-color: rgb(255, 255, 255);
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        .left-side-text{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;   
+        }
 
     </style>
 </head>
@@ -30,7 +60,7 @@
     <div class='container'>
         <div class="login-container">
             <div class="left-side">
-                <div>
+                <div class="left-side-text">
                     <h2>Vous n'avez pas encore de compte ?</h2>
                     <p>Veuillez créer un nouveau compte pour explorer les differents blogs</p>
                 </div>
@@ -41,8 +71,21 @@
 
             </div>
             <div class="right-side">
+                <h2>Veuillez complèter</h2>
+                
                 <div>
-                    
+                    <div>
+                        <label for="username">Nom d'utilisateur</label>
+                        <input type="text" id="username" name="username" placeholder="Entrez votre nom d'utilisateur">
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Entrez votre email">
+                    </div>
+                    <div>
+                        <label for="password">Mot de passe</label>
+                        <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe">
+                    </div>
                 </div>
             </div>
         </div>
