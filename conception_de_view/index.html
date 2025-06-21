@@ -42,7 +42,7 @@
 
         }
         .right-side{
-            background-color: rgb(240, 244, 242);
+            background-color: rgb(225, 225, 225);
             border-top-right-radius: 15px;
             border-bottom-right-radius: 15px;
         }
@@ -86,7 +86,7 @@
             border: solid 1px;
             cursor: pointer;
             background-color: rgb(47, 181, 185);
-            color: white;
+            color: black;
             transition: all 0.3s ease-in-out;
 
         }
@@ -104,6 +104,55 @@
             width: 100%;
         }
 
+        .brightness-container{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .brightness-disponnible-list{
+            
+            display: flex;
+            flex-direction: row;
+            list-style-type: none;
+            justify-content: space-between;
+            padding: 0;
+            margin: 0;
+        }
+        .brightness-disponnible-list li{
+            padding: 5px;
+            margin: 0;
+            cursor: pointer;
+            height: 24px;
+            transition: all 0.3s ease-in-out;
+        }
+        .brightness-disponnible-list li:nth-child(1){
+            border-bottom-left-radius: 50px;
+            border-top-left-radius: 50px    ;
+            transition: all 0.3s ease-in-out;
+        }
+        .brightness-disponnible-list li:nth-child(4){
+            border-bottom-right-radius: 50px;
+            border-top-right-radius: 50px    ;
+            color: white;
+            transition: all 0.3s ease-in-out;
+        }
+        .brightness-disponnible-list li:hover{
+            background: white;
+            transition: all 0.3s ease-in-out;
+
+        }
+        .brightness-disponnible-list li.active{
+            background: white;
+            color: white;
+            transition: all 0.3s ease-in-out;
+        }
+        .left-side-text-color{
+            color: white;
+        }
+        body{
+            background: rgb(200, 220, 220);
+        }
     </style>
 </head>
 <body>
@@ -112,8 +161,8 @@
             <div class="left-side">
                 <div class="left-side-text">
                     <center>
-                    <h2 style="color: white;">Vous n'avez pas encore de compte ?</h2>
-                    <p style="color: white;">Veuillez créer un nouveau compte pour explorer les differents blogs</p></center>
+                    <h2 class="left-side-text-color">Vous n'avez pas encore de compte ?</h2>
+                    <p class="left-side-text-color">Veuillez créer un nouveau compte pour explorer les differents blogs</p></center>
                 </div>
 
                 <div class="btn-container btn-create-account">
@@ -122,6 +171,22 @@
 
             </div>
             <div class="right-side">
+                <div class="brightness-container">
+                    <ul class="brightness-disponnible-list">
+                        <li onclick="brightnessDark(this)">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M480-28 346-160H160v-186L28-480l132-134v-186h186l134-132 134 132h186v186l132 134-132 134v186H614L480-28Zm0-252q83 0 141.5-58.5T680-480q0-83-58.5-141.5T480-680q-83 0-141.5 58.5T280-480q0 83 58.5 141.5T480-280Zm0-200Zm0 340 100-100h140v-140l100-100-100-100v-140H580L480-820 380-720H240v140L140-480l100 100v140h140l100 100Zm0-340Z"/></svg>
+                        </li>
+                        <li onclick="brightnessSubDark(this)">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M480-28 346-160H160v-186L28-480l132-134v-186h186l134-132 134 132h186v186l132 134-132 134v186H614L480-28Zm0-252q83 0 141.5-58.5T680-480q0-83-58.5-141.5T480-680v400Zm0 140 100-100h140v-140l100-100-100-100v-140H580L480-820 380-720H240v140L140-480l100 100v140h140l100 100Zm0-340Z"/></svg>
+                        </li>
+                        <li class="active" onclick="brightnessSubLight(this)">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M492-280q83 0 141.5-58.5T692-480q0-83-58.5-141.5T492-680q-22 0-43 4.5T408-662q54 25 85.5 74T525-480q0 59-31.5 108T408-298q20 9 41 13.5t43 4.5ZM480-28 346-160H160v-186L28-480l132-134v-186h186l134-132 134 132h186v186l132 134-132 134v186H614L480-28Zm0-112 100-100h140v-140l100-100-100-100v-140H580L480-820 380-720H240v140L140-480l100 100v140h140l100 100Zm0-340Z"/></svg>
+                        </li>
+                        <li onclick="brightnessLight(this)">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M480-28 346-160H160v-186L28-480l132-134v-186h186l134-132 134 132h186v186l132 134-132 134v186H614L480-28Zm0-252q83 0 141.5-58.5T680-480q0-83-58.5-141.5T480-680q-83 0-141.5 58.5T280-480q0 83 58.5 141.5T480-280Zm0-80q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35Zm0 220 100-100h140v-140l100-100-100-100v-140H580L480-820 380-720H240v140L140-480l100 100v140h140l100 100Zm0-340Z"/></svg>
+                        </li>
+                    </ul>
+                </div>
                 <h2>Veuillez complèter</h2>
                 
                 <form action="" method="post">
@@ -188,6 +253,56 @@
                 el.parentElement.style.borderColor='rgb(0, 0, 0)';
             });
         });
+
+        var brightnessList=document.querySelectorAll('.brightness-disponnible-list li');
+
+        function brightnessLight(element){
+            brightnessList.forEach((el)=>{
+                el.classList.remove('active');
+            });
+            
+            element.classList.add('active');
+            //
+            document.getElementsByClassName('left-side')[0].style.background='linear-gradient(30deg,rgb(118, 97, 249),rgb(119, 255, 199))';
+            //
+            var rightSideText = [...document.getElementsByClassName('left-side-text-color')];
+            rightSideText.forEach((el)=>{
+                el.style.color='black';
+            });
+            //
+            document.body.style.backgroundColor='white';
+
+        }
+        function brightnessSubLight(element){
+            brightnessList.forEach((el)=>{
+                el.classList.remove('active');
+            });
+            element.classList.add('active');
+        
+            //
+            document.getElementsByClassName('left-side')[0].style.background='linear-gradient(30deg,rgb(15, 1, 100),rgb(15, 159, 100))';
+            //
+            var rightSideText = [...document.getElementsByClassName('left-side-text-color')];
+            rightSideText.forEach((el)=>{
+                el.style.color='rgb(220, 220, 220)';
+            });
+            //
+            document.body.style.backgroundColor='rgb(240, 244, 242)';
+        }
+        function brightnessDark(element){
+            brightnessList.forEach((el)=>{
+                el.classList.remove('active');
+            });
+            element.classList.add('active');
+            document.body.style.backgroundColor='rgb(240, 244, 242)';
+        }
+        function brightnessSubDark(element){
+            brightnessList.forEach((el)=>{
+                el.classList.remove('active');
+            });
+            element.classList.add('active');
+            document.body.style.backgroundColor='rgb(240, 244, 242)';
+        }
 
     </script>
 </body>
