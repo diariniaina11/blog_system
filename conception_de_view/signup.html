@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>sign up</title>
     <style>
         .container{
             display: flex;
@@ -20,7 +20,6 @@
             display: flex;
             flex-direction: row;
             width: 57%;
-            height: 580px;
             border-radius: 41px;
             box-shadow: 10px 10px 30px rgba(0, 0, 0, 1);
         }
@@ -95,6 +94,8 @@
             color: white;
             
             transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
+
 
         }
         .button-conn-container{
@@ -103,7 +104,37 @@
             justify-content: center;
             width: 100%;
         }
+        .profile-picture-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
 
+        .profile-picture{
+            width: 119px;
+            border-radius: 20px;
+        }
+        #profile-picture-input{
+            display: none;
+        }
+        .profile-picture-input-button{
+            background: #b0b0e8;
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 5px;
+        }
+        .profile-picture-input-button:hover{
+            background: #a0a0d8;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+
+        }
+        .profile-picture-input-button-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -122,9 +153,24 @@
 
             </div>
             <div class="right-side">
-                <h2>Veuillez complèter</h2>
+                <h2>Créatin de Compte</h2>
                 
                 <form action="" method="post">
+                    <center>
+                    <div class="uploading-profile-picture">
+                        <label for="username">Photo de profil</label><br>
+
+                        <div class="profile-picture-container">
+                            <img class="profile-picture" src="https://www.shutterstock.com/image-vector/vector-flat-illustration-grayscale-avatar-260nw-2281862025.jpg" alt="">
+                        </div>
+                        <input type="file" id="profile-picture-input">
+                        <div class="profile-picture-input-button-container">
+                            <label for="profile-picture-input" class="profile-picture-input-button">
+                                Ajouter une photo
+                            </label>
+                        </div>
+
+                    </div>
                     <div class="form-block">
                         <label for="username">Nom d'utilisateur</label><br>
 
@@ -154,6 +200,7 @@
                     <div class="button-conn-container">
                         <button class="button-conn">Se Connecter</button>
                     </div>
+                    </center>
                 </form>
             </div>
         </div>
